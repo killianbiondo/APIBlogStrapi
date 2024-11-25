@@ -6,7 +6,7 @@ function App() {
   const [loading, setLoading] = useState(true); // État pour l'indicateur de chargement
 
 
-  const API_URL = 'http://localhost:1338/api/articles';
+  const API_URL = 'http://localhost:1339/api/articles';
 
   // Fonction pour récupérer les articles depuis Strapi
   useEffect(() => {
@@ -28,9 +28,10 @@ function App() {
     fetchArticles();
   }, []);
 
+
   // Si les articles sont en cours de chargement, afficher un message
   if (loading) {
-    return <div>Chargement des articles...</div>;
+    return <div>Chargement des articles ...</div>;
   }
 
   return (
@@ -41,6 +42,7 @@ function App() {
               <li key={article.id}>
                 <h2>{article.title}</h2>
                 <p>{article.content}</p>
+
               </li>
           ))}
         </ul>
