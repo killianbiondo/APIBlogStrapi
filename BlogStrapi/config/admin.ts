@@ -1,17 +1,8 @@
-export default ({ env }) => ({
+module.exports = ({ env }) => ({
   auth: {
-    secret: env('ADMIN_JWT_SECRET'),
+    secret: env('JWT_SECRET'), // Lit le JWT_SECRET depuis le fichier .env
   },
   apiToken: {
-    salt: env('API_TOKEN_SALT'),
-  },
-  transfer: {
-    token: {
-      salt: env('TRANSFER_TOKEN_SALT'),
-    },
-  },
-  flags: {
-    nps: env.bool('FLAG_NPS', true),
-    promoteEE: env.bool('FLAG_PROMOTE_EE', true),
+    salt: env('API_TOKEN_SALT'), // Lit le API_TOKEN_SALT depuis le fichier .env
   },
 });
